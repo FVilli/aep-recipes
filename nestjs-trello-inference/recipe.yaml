@@ -1,0 +1,16 @@
+# Recipe: nestjs-trello-inference
+# Layer deterministico — eseguito direttamente da AEP, non interpretato da un LLM.
+
+description: >-
+  Backend NestJS che integra Trello (board/card, webhook) con un provider di
+  inferenza LLM con supporto tool calling (lettura card/board, web search,
+  knowledge base). Adatto a progetti che combinano questi stessi tre elementi:
+  NestJS, API Trello, un modello LLM invocato in modo agentico.
+
+requiredPaths:
+  - src/main.ts
+  - package.json
+
+checks:
+  build: npm run build
+  lint: npm run lint
