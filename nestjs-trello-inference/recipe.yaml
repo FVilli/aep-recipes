@@ -13,4 +13,16 @@ requiredPaths:
 
 checks:
   build: npm run build
-  lint: npm run lint
+
+inputs:
+  - package.json
+  - package-lock.json
+
+outputs:
+  - node_modules
+
+prepare:
+  - name: install-dependencies
+    command: npm ci
+    cwd: .
+    timeoutMs: 600000
