@@ -10,6 +10,7 @@ description: >-
 requiredPaths:
   - src/main.ts
   - package.json
+  - package-lock.json
 
 checks:
   build: npm run build
