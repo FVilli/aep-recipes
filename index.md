@@ -10,6 +10,19 @@ recipes:
       - nestjs
       - trello-api
       - llm-inference
+  - name: ionic-angular-monorepo
+    description: >-
+      Monorepo di app Ionic standalone: ogni cartella alla radice è un'app Angular
+      (componenti standalone) + Ionic + Capacitor indipendente, pubblicata con Firebase
+      Hosting; Auth e Firestore tramite AngularFire solo se una milestone li introduce.
+      Nessun progetto alla radice. Check: build e test unitari Vitest di ogni app.
+    stack:
+      - angular
+      - ionic
+      - capacitor
+      - firebase-hosting
+      - vitest
+      - monorepo
 ---
 
 # Catalogo ricette AEP
@@ -28,3 +41,4 @@ rilevante, non frasi.
 | Ricetta | Descrizione | Stack |
 |---|---|---|
 | [nestjs-trello-inference](nestjs-trello-inference/) | Backend NestJS che integra Trello (board/card, webhook) con un provider di inferenza LLM con supporto tool calling (lettura card/board, web search, knowledge base). Adatto a progetti che combinano questi stessi tre elementi: NestJS, API Trello, un modello LLM invocato in modo agentico. | nestjs, trello-api, llm-inference |
+| [ionic-angular-monorepo](ionic-angular-monorepo/) | Monorepo di app Ionic standalone (Angular + Ionic + Capacitor) pubblicate con Firebase Hosting, una cartella per app alla radice. | angular, ionic, capacitor, firebase-hosting, vitest, monorepo |

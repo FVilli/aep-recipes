@@ -1,0 +1,19 @@
+# Recipe: ionic-angular-monorepo
+# Layer deterministico — eseguito direttamente da AEP, non interpretato da un LLM.
+#
+# Il repository contiene una o più app Ionic standalone, ognuna in una propria cartella
+# alla radice (con ionic.config.json e package.json) e nessun progetto alla radice.
+# scripts/apps.sh scopre le app ed esegue lo stesso passo su ciascuna; viene materializzato
+# e pinnato in .aep/recipe/ insieme al resto della recipe.
+
+requiredPaths: []
+
+checks:
+  build: sh .aep/recipe/scripts/apps.sh build
+  test: sh .aep/recipe/scripts/apps.sh test
+
+prepare:
+  - name: install-dependencies
+    command: sh .aep/recipe/scripts/apps.sh install
+    cwd: .
+    timeoutMs: 900000
